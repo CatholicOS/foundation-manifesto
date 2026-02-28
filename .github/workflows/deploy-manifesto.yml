@@ -1,0 +1,122 @@
+name: Deploy Manifesto to WordPress
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: Convert & publish manifesto
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pandoc
+        uses: pandoc/actions/setup@v1
+
+      - name: Convert Markdown to HTML fragment
+        run: pandoc 'CDCF Manifesto.md' -f markdown -t html5 -o manifesto.html
+
+      - name: Deploy to WordPress
+        id: deploy
+        env:
+          WP_REST_URL: ${{ secrets.WP_REST_URL }}
+          WP_APP_USERNAME: ${{ secrets.WP_APP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          HTML_CONTENT=$(cat manifesto.html)
+
+          # Check if a page with slug "manifesto" already exists
+          EXISTING=$(curl -s \
+            -u "$WP_APP_USERNAME:$WP_APP_PASSWORD" \
+            "$WP_REST_URL/wp/v2/pages?slug=manifesto&status=publish,draft")
+
+          PAGE_ID=$(echo "$EXISTING" | jq -r '.[0].id // empty')
+
+          PAYLOAD=$(jq -n \
+            --arg title "Manifesto" \
+            --arg slug "manifesto" \
+            --arg content "$HTML_CONTENT" \
+            '{title: $title, slug: $slug, content: $content, status: "publish"}')
+
+          if [ -n "$PAGE_ID" ] && [ "$PAGE_ID" != "null" ]; then
+            echo "Updating existing page (ID: $PAGE_ID)..."
+            RESPONSE=$(curl -s -f -X POST \
+              -u "$WP_APP_USERNAME:$WP_APP_PASSWORD" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD" \
+              "$WP_REST_URL/wp/v2/pages/$PAGE_ID")
+          else
+            echo "Creating new page..."
+            RESPONSE=$(curl -s -f -X POST \
+              -u "$WP_APP_USERNAME:$WP_APP_PASSWORD" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD" \
+              "$WP_REST_URL/wp/v2/pages")
+            PAGE_ID=$(echo "$RESPONSE" | jq -r '.id')
+          fi
+
+          echo "page_id=$PAGE_ID" >> "$GITHUB_OUTPUT"
+          echo ""
+          echo "Deployed manifesto to WordPress (page ID: $PAGE_ID)."
+
+      - name: Translate to all languages
+        env:
+          WP_REST_URL: ${{ secrets.WP_REST_URL }}
+          WP_APP_USERNAME: ${{ secrets.WP_APP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          PAGE_ID="${{ steps.deploy.outputs.page_id }}"
+          TARGET_LANGS=("it" "es" "fr" "pt" "de")
+
+          for LANG in "${TARGET_LANGS[@]}"; do
+            echo "Translating manifesto to ${LANG}..."
+            RESPONSE=$(curl -s -f -X POST \
+              -u "$WP_APP_USERNAME:$WP_APP_PASSWORD" \
+              -H "Content-Type: application/json" \
+              -d "{\"source_id\": ${PAGE_ID}, \"target_lang\": \"${LANG}\"}" \
+              "$WP_REST_URL/cdcf/v1/translate")
+
+            TRANSLATED_ID=$(echo "$RESPONSE" | jq -r '.post_id // empty')
+            MESSAGE=$(echo "$RESPONSE" | jq -r '.message // empty')
+
+            if [ -n "$TRANSLATED_ID" ]; then
+              echo "  ✓ ${LANG}: post ID ${TRANSLATED_ID} — ${MESSAGE}"
+            else
+              echo "  ✗ ${LANG}: translation failed"
+              echo "  Response: $RESPONSE"
+            fi
+          done
+
+          echo ""
+          echo "All translations complete."
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build standalone HTML and PDF
+        run: |
+          npm run build:html:standalone
+          npm run build:pdf
+
+      - name: Create GitHub release with PDF and standalone HTML
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          gh release create "$TAG" \
+            --title "Manifesto $TAG" \
+            --notes "Official manifesto of the Catholic Digital Commons Foundation, $TAG." \
+            dist/manifesto-standalone.html \
+            dist/manifesto.pdf

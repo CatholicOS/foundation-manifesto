@@ -1,0 +1,27 @@
+{
+  "name": "foundation-manifesto",
+  "private": true,
+  "description": "Official manifesto of the Catholic Digital Commons Foundation",
+  "scripts": {
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#.yarn\"",
+    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#**/node_modules\" \"#.yarn\"",
+    "format:md": "prettier --write \"**/*.md\" \"!**/node_modules/**\"",
+    "build:html": "mkdir -p dist && pandoc 'CDCF Manifesto.md' -f markdown -t html5 -o dist/manifesto.html",
+    "build:html:standalone": "mkdir -p dist && pandoc 'CDCF Manifesto.md' --standalone --embed-resources --css scripts/manifesto-print.css -f markdown -t html5 -o dist/manifesto-standalone.html",
+    "build:pdf": "pagedjs-cli --browserArgs='--no-sandbox' dist/manifesto-standalone.html -o dist/manifesto.pdf",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write",
+      "markdownlint-cli2"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "markdownlint-cli2": "^0.17.2",
+    "pagedjs-cli": "^0.4.3",
+    "prettier": "^3.5.3"
+  }
+}
