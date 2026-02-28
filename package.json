@@ -5,7 +5,7 @@
   "scripts": {
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#.yarn\"",
     "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#**/node_modules\" \"#.yarn\"",
-    "format:md": "prettier --write \"**/*.md\" \"!**/node_modules/**\"",
+    "format:md": "prettier --prose-wrap always --print-width 180 --write \"**/*.md\" \"!**/node_modules/**\"",
     "build:html": "mkdir -p dist && pandoc 'CDCF Manifesto.md' -f markdown -t html5 -o dist/manifesto.html",
     "build:html:standalone": "mkdir -p dist && pandoc 'CDCF Manifesto.md' --standalone --embed-resources --css scripts/manifesto-print.css -f markdown -t html5 -o dist/manifesto-standalone.html",
     "build:pdf": "pagedjs-cli --browserArgs='--no-sandbox' dist/manifesto-standalone.html -o dist/manifesto.pdf",
@@ -13,7 +13,7 @@
   },
   "lint-staged": {
     "*.md": [
-      "prettier --write",
+      "prettier --prose-wrap always --print-width 180 --write",
       "markdownlint-cli2"
     ]
   },
