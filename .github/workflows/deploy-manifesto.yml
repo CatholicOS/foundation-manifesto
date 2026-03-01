@@ -22,7 +22,7 @@ jobs:
         uses: pandoc/actions/setup@v1
 
       - name: Convert Markdown to HTML fragment
-        run: pandoc 'CDCF Manifesto.md' -f markdown -t html5 -o manifesto.html
+        run: pandoc 'CDCF Manifesto.md' --wrap=none --lua-filter=scripts/blockquote-citation.lua -f markdown -t html5 -o manifesto.html
 
       - name: Deploy to WordPress
         id: deploy

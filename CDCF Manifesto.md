@@ -16,7 +16,7 @@ witness in contemporary culture and an emerging missionary field" (Final Documen
 We recognize that the current technological revolution is a meaningful transformation that influences the social contract underpinning our relationships and environment. We choose
 to meet this gravity with a bold, inviting, and hopeful vision for the common good.
 
-> “We need not less technology but more. Or, more accurately, we need stronger, more considered, more human technology.”
+> We need not less technology but more. Or, more accurately, we need stronger, more considered, more human technology.
 >
 > \-- Romano Guardini, _Letters from Lake Como_ (1927), Letter IX
 
@@ -35,7 +35,7 @@ As Pope Francis stated: “The concept of human dignity requires us to recognize
 allow algorithms to limit or condition respect for human dignity, or to exclude compassion, mercy, forgiveness, and above all, the hope that people are able to change” (Pope
 Francis, Address to the participants in the Minerva Dialogues, 27 March 2023).
 
-> “The human person is ordained directly to God as to its absolute ultimate end. Its direct ordination to God transcends every created common good.”
+> The human person is ordained directly to God as to its absolute ultimate end. Its direct ordination to God transcends every created common good.
 >
 > \-- Jacques Maritain, _The Person and the Common Good_ (1947)
 
@@ -50,8 +50,8 @@ Our aim is not to sell products, but to professionalize the ecosystem. By provid
 ingenuity becomes a global resource. We transform scattered code into a durable architectural spine that outlasts any single volunteer, providing the Church with a discoverable and
 adoptable commons of open infrastructure.
 
-> “The essential of the guild-idea is pursuing the same form of activity, but only in cooperation limited to the end of preserving the economic freedom \-- that is the property and
-> livelihood \-- of each member of the guild.”
+> The essential of the guild-idea is pursuing the same form of activity, but only in cooperation limited to the end of preserving the economic freedom \-- that is the property and
+> livelihood \-- of each member of the guild.
 >
 > \-- Hilaire Belloc, _The Crisis of Civilization_ (1937)
 
@@ -59,8 +59,8 @@ Translating Belloc’s idea of a guild to that of a foundation dedicated to a di
 Church institutions in maintaining a shared digital infrastructure — preserving each institution’s independent ability to use, contribute to, and govern its own data and tools —
 without centralizing ownership or control beyond what is necessary for sustainability.
 
-> “We must lay one brick at a time, take one step at a time... But we can beg for an increase of love in our hearts that will vitalize and transform all our individual actions, and
-> know that God will take care of them and multiply them, as Jesus multiplied the loaves and fishes."
+> We must lay one brick at a time, take one step at a time... But we can beg for an increase of love in our hearts that will vitalize and transform all our individual actions, and
+> know that God will take care of them and multiply them, as Jesus multiplied the loaves and fishes.
 >
 > \-- Dorothy Day, _Loaves and Fishes_ (1963)
 
@@ -76,8 +76,8 @@ Greek philosophy was "a schoolmaster...paving the way for him who is perfected i
 the intellectual idiom of the Greco-Roman world, so must we learn to speak the language of technology to carry the Gospel into the digital age. The prophet Habakkuk calls us to
 this clarity: "Write down the vision; make it plain upon tablets, so that the one who reads it may run" (Habakkuk 2:2).
 
-> “It is a commonplace that they did everything that nobody else would do; that the abbeys kept the world's diary, faced the plagues of all flesh, taught the first technical arts,
-> preserved the pagan literature, and above all, by a perpetual patchwork of charity, kept the poor from the most distant sight of their modern despair.”
+> It is a commonplace that they did everything that nobody else would do; that the abbeys kept the world's diary, faced the plagues of all flesh, taught the first technical arts,
+> preserved the pagan literature, and above all, by a perpetual patchwork of charity, kept the poor from the most distant sight of their modern despair.
 >
 > \-- G. K. Chesterton, _A Short History of England_ (1917), Ch. IV: "The Defeat of the Barbarians”
 
@@ -106,7 +106,7 @@ matter...Hence the pressing need for formation in an ethically responsible use o
 the natural rhythms of human life and the "analog" requirements of a healthy soul. In Pope Francis's words, "It is up to us to decide whether we will become fodder for algorithms
 or will nourish our hearts with that freedom without which we cannot grow in wisdom" (2024 WCD Message).
 
-> “Leisure is a form of that stillness that is necessary preparation for accepting reality; only the person who is still can hear.”
+> Leisure is a form of that stillness that is necessary preparation for accepting reality; only the person who is still can hear.
 >
 > \-- Josef Pieper, _Leisure, the Basis of Culture_ (1948)
 
@@ -121,6 +121,6 @@ available today, and offers a more holistic architectural approach.
 Our goal is a digital landscape that reflects the beauty of the Creator and serves as a beacon of hope. In all this, "we are not pursuing 'followers' for ourselves, but for Christ"
 (_Towards Full Presence_ §78). Technology, when grounded in magisterial anthropology, can truly elevate human dignity and the common good.
 
-> “Knowledge is capable of being its own end. Such is the constitution of the human mind, that any kind of knowledge, if it be really such, is its own reward.”
+> Knowledge is capable of being its own end. Such is the constitution of the human mind, that any kind of knowledge, if it be really such, is its own reward.
 >
 > \-- Saint John Henry Newman, _The Idea of a University_ (1852), Discourse V
