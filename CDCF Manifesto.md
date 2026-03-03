@@ -67,8 +67,8 @@ without centralizing ownership or control beyond what is necessary for sustainab
 **A Legacy of Preservation and Translation.** This work is not without precedent. The Church has always been a custodian of knowledge and a translator of truth into the language of
 every age. In the sixth century, Cassiodorus founded the monastery of Vivarium (c. 560 AD) with its great scriptorium, dedicated to the preservation and copying of both sacred and
 secular texts. The Benedictine monks at Monte Cassino safeguarded the works of Tacitus, Apuleius, and Seneca through centuries of upheaval. Irish monks at Clonmacnoise, Iona, and
-Skellig Michael preserved Greek and Latin manuscripts and produced masterworks such as the Book of Kells. From these monastic and cathedral schools grew the first universities
-aligned with our faith or supporting our Church — Bologna (1088), Paris (c. 1150), Oxford (c. 1167\) — institutions that shaped the intellectual inheritance of all humanity.
+Skellig Michael preserved Greek and Latin manuscripts and produced masterworks such as the Book of Kells. From these monastic and cathedral schools grew the first universities —
+Bologna (1088), Paris (c. 1150), Oxford (c. 1167\) — institutions that shaped the intellectual inheritance of all humanity.
 
 The same impulse that drove the monks to preserve ancient wisdom drove the early Church Fathers to translate the faith into the philosophical language of their time. Saint Justin
 Martyr taught that seeds of the divine Word \- the _logos spermatikos_ \- were present in all cultures, awaiting their fulfillment in Christ. Saint Clement of Alexandria held that
