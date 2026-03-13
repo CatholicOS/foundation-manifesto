@@ -16,6 +16,8 @@ jobs:
   lint:
     name: Lint Markdown
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repository
@@ -28,6 +30,8 @@ jobs:
 
       - name: Install linting tools
         run: npm install --no-save markdownlint-cli2 prettier
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
 
       - name: Run markdownlint
         run: npm run lint:md
