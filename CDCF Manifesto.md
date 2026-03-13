@@ -59,11 +59,6 @@ Translating Belloc’s idea of a guild to that of a foundation dedicated to a di
 Church institutions in maintaining a shared digital infrastructure — preserving each institution’s independent ability to use, contribute to, and govern its own data and tools —
 without centralizing ownership or control beyond what is necessary for sustainability.
 
-> We must lay one brick at a time, take one step at a time... But we can beg for an increase of love in our hearts that will vitalize and transform all our individual actions, and
-> know that God will take care of them and multiply them, as Jesus multiplied the loaves and fishes.
->
-> \-- Dorothy Day, _Loaves and Fishes_ (1963)
-
 **A Legacy of Preservation and Translation.** This work is not without precedent. The Church has always been a custodian of knowledge and a translator of truth into the language of
 every age. In the sixth century, Cassiodorus founded the monastery of Vivarium (c. 560 AD) with its great scriptorium, dedicated to the preservation and copying of both sacred and
 secular texts. The Benedictine monks at Monte Cassino safeguarded the works of Tacitus, Apuleius, and Seneca through centuries of upheaval. Irish monks at Clonmacnoise, Iona, and
